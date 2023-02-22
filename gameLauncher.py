@@ -4,6 +4,9 @@ from tkinter import ttk
 import sys
 import os
 
+if getattr(sys, 'frozen', False):
+    import pyi_splash
+
 def resource_path(relative_path):
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
@@ -76,5 +79,8 @@ game_3_button.grid(row=2, column=0, pady=10, padx=10)
 
 game_5_button = ttk.Button(root, text="Flash Memory", command=run_game_5)
 game_5_button.grid(row=2, column=1, pady=10, padx=10)
+
+if getattr(sys, 'frozen', False):
+    pyi_splash.close()
 
 root.mainloop()

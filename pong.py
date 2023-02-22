@@ -13,6 +13,7 @@ def start_game():
     root.protocol("WM_DELETE_WINDOW", on_closing)
     turtle.TurtleScreen._RUNNING = True
     screen = turtle.Screen()
+    screen.bgcolor('black')
     screen.title("Ping-Pong")  
     
     window_width = 420
@@ -44,6 +45,8 @@ def start_game():
         """Draw rectangle at (x, y) with given width and height."""
         up()
         goto(x, y)
+        pencolor('yellow')
+        fillcolor('yellow')
         down()
         begin_fill()
         for count in range(2):
@@ -66,6 +69,7 @@ def start_game():
 
         up()
         goto(x, y)
+        color('hotpink')
         dot(10)
         update()
 
